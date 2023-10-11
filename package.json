@@ -1,0 +1,10 @@
+{
+  "name": "store",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "free": "free -h --giga",
+    "skaffold": "skaffold dev --trigger polling"
+  },
+  "main": "index.js"
+}

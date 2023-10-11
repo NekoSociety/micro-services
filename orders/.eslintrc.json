@@ -1,0 +1,90 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "prettier"
+  ],
+  "rules": {
+    "no-undef": "off",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "import/first": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "@assets/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          },
+          {
+            "pattern": "@components/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          },
+          {
+            "pattern": "@services/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          },
+          {
+            "pattern": "@utils/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreDeclarationSort": true
+      }
+    ]
+  }
+}

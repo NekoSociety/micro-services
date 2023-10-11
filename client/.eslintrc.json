@@ -1,0 +1,164 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "next/core-web-vitals"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import",
+    "prettier"
+  ],
+  "rules": {
+    "no-undef": "off",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-var-requires": "off",
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/display-name": "off",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/sort-prop-types": "warn",
+    "import/first": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "antd",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@ant-design/icons",
+            "group": "external",
+            "position": "before"
+          },
+
+          {
+            "pattern": "@assets/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          },
+          {
+            "pattern": "@components/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          },
+          {
+            "pattern": "@hooks/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          },
+          {
+            "pattern": "@pages/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          },
+          {
+            "pattern": "@redux/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          },
+          {
+            "pattern": "@services/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          },
+          {
+            "pattern": "@styles/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          },
+          {
+            "pattern": "@utils/**",
+            "group": "internal",
+            "position": "before",
+            "patternOptions": {
+              "partial": true,
+              "nocomment": true
+            }
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreDeclarationSort": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/pages/**/*"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ]
+}
